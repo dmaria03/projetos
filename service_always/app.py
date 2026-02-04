@@ -3,6 +3,8 @@ import pymysql
 import threading
 from config import Config
 from routes.usuarios import usuarios_bp
+from routes.chamados import chamados_bp
+
 from cli import menu_usuarios   # importa o menu do cli.py
 
 
@@ -11,6 +13,9 @@ app.config.from_object(Config)
 
 # Registrar blueprint
 app.register_blueprint(usuarios_bp, url_prefix="/usuarios")
+app.register_blueprint(chamados_bp, url_prefix="/chamados")
+
+print(app.url_map)
 
 
 # Função para obter conexão com MySQL
