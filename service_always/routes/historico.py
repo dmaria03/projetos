@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify
 from routes.usuarios import Usuario
+from routes.chamados import Chamados 
 
 historico_bp = Blueprint("historico", __name__)
 
